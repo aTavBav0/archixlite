@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Archix-UBG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: white;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 24px;
+      background: #7b3fe4;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    header img {
+      width: 48px;
+      height: 48px;
+      image-rendering: pixelated;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .search {
+      margin-left: auto;
+    }
+    .search input {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+    main {
+      padding: 24px;
+    }
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .game {
+      background: #2a2a40;
+      border-radius: 16px;
+      padding: 16px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .game:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .game img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .game h3 {
+      margin: 0;
+      font-size: 18px;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 16px;
+      background: #181826;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="ACHXUBG.png" alt="Archix-UBG Logo">
+    <h1>Archix-UBG</h1>
+    <div class="search">
+      <input id="search" type="text" placeholder="Search games...">
+    </div>
+  </header>
+
+  <main>
+    <div class="games" id="games">
+      <div class="game" data-name="Slope">
+        <img src="https://via.placeholder.com/300x180" alt="Slope">
+        <h3>Slope</h3>
+      </div>
+      <div class="game" data-name="Run 3">
+        <img src="https://via.placeholder.com/300x180" alt="Run 3">
+        <h3>Run 3</h3>
+      </div>
+      <div class="game" data-name="Retro Bowl">
+        <img src="https://via.placeholder.com/300x180" alt="Retro Bowl">
+        <h3>Retro Bowl</h3>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Archix-UBG · Made for fun
+  </footer>
+
+  <script>
+    const search = document.getElementById('search');
+    const games = document.querySelectorAll('.game');
+
+    search.addEventListener('input', () => {
+      const value = search.value.toLowerCase();
+      games.forEach(game => {
+        const name = game.dataset.name.toLowerCase();
+        game.style.display = name.includes(value) ? 'block' : 'none';
+      });
+    });
+
+    games.forEach(game => {
+      game.addEventListener('click', () => {
+        alert('Game page coming soon');
+      });
+    });
+  </script>
+</body>
+</html>
