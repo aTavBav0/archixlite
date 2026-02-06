@@ -397,6 +397,10 @@ games.forEach(game => {
   game.addEventListener('click', () => {
     const link = game.dataset.link;
     if (!link) return;
+    if (game.dataset.name === "Join Our Discord") {
+      window.open(link, "_blank");
+      return;
+    }
     currentLink = link;
     title.textContent = game.dataset.name;
 
