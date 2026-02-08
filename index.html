@@ -425,25 +425,6 @@ games.forEach(game => {
 
     frame.src = link;
 
-if (game.dataset.name === "Friday Night Funkin") {
-
-  const originalLink = link;
-
-  frame.onload = () => {
-    try {
-      const current = frame.contentWindow.location.href;
-
-      if (!current.startsWith(originalLink)) {
-        frame.src = originalLink; // force reload
-      }
-
-    } catch {
-      // If cross-origin blocks us, just reload anyway
-      frame.src = originalLink;
-    }
-  };
-}
-
 	  if (game.dataset.name === "A Dance Of Fire And Ice") {
   		frame.style.zoom = "1.5";
 	  }
